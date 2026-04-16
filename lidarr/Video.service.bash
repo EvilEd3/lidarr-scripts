@@ -265,7 +265,7 @@ ImvdbCache () {
 }
 
 DownloadVideo () {
-	# $1 = videoDownloadUrl, $2 = plexVideoFileName (Artist - Title)
+	# $1 = videoDownloadUrl, $2 = plexVideoFileName (Title)
 	if [ -d "$videoDownloadPath/incomplete" ]; then
 		rm -rf "$videoDownloadPath/incomplete"
 	fi
@@ -306,7 +306,7 @@ DownloadVideo () {
 }
 
 DownloadThumb () {
-	# $1 = imageUrl, $2 = plexVideoFileName (Artist - Title)
+	# $1 = imageUrl, $2 = plexVideoFileName (Title)
 	curl -s "$1" -o "$videoDownloadPath/incomplete/${2}.jpg"
 	chmod 666 "$videoDownloadPath/incomplete/${2}.jpg"
 }
@@ -411,7 +411,7 @@ VideoTagProcess () {
 }
 
 VideoNfoWriter () {
-	# $1 = plexVideoFileName (Artist - Title), $2 = unused, $3 = imvdbVideoTitle,
+	# $1 = plexVideoFileName (Title), $2 = unused, $3 = imvdbVideoTitle,
 	# $4 = unused, $5 = source type, $6 = year, $7 = unused, $8 = videoSource
 	log "${processCount}/${lidarrArtistIdsCount} :: $lidarrArtistName :: IMVDB :: ${imvdbProcessCount}/${imvdbArtistVideoCount} :: ${3} :: Writing NFO"
 	nfo="$videoDownloadPath/incomplete/${1}.nfo"
@@ -678,8 +678,8 @@ VideoProcess () {
 					fi
 					videoDownloadUrl="https://www.youtube.com/watch?v=$imvdbVideoYoutubeId"
 
-					# Build Plex-compatible filename: "Artist - Title"
-					plexVideoFileName="${lidarrArtistNameSanitized} - ${videoTitleClean}"
+					# Build Plex-compatible filename: "Title"
+					plexVideoFileName="${videoTitleClean}"
 
 					if [ -d "$videoPath/$lidarrArtistFolderNoDisambig" ]; then
 						# Check for NFO with new naming
