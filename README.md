@@ -1,10 +1,8 @@
 # Fork Notes
-My fork is just for fixing and enhancing the lidarr scripts.
+Credit to https://github.com/mkaltner, just adding some changes to make it more JellyFin Friendly
 
 Changes:
- - Integrate samhaswon's tidal-dl-ng changes (plus my own changes)
- - Fix API version detection and other build/logging issues
- - Updated video scripts to support Plex naming convention
+ - Video File Changes
 
 # arr-scripts
 
@@ -12,11 +10,7 @@ Official Home of the scripts that were previously packaged with the "Extended" c
 
 ## Usage
 
- [Radarr Instructions](https://github.com/RandomNinjaAtk/arr-scripts/tree/main/radarr/readme.md)  
- [Sonarr Instructions](https://github.com/RandomNinjaAtk/arr-scripts/tree/main/sonarr/readme.md)  
  [Lidarr Instructions](https://github.com/RandomNinjaAtk/arr-scripts/tree/main/lidarr/readme.md)  
- [Readarr Instructions](https://github.com/RandomNinjaAtk/arr-scripts/tree/main/readarr/readme.md)  
- [SABnzbd Instructions](https://github.com/RandomNinjaAtk/arr-scripts/tree/main/sabnzbd#/readme.md)
 
 ## WARNING
 
